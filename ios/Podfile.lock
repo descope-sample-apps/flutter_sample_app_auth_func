@@ -1,0 +1,22 @@
+PODS:
+  - descope (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - descope (from `.symlinks/plugins/descope/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  descope:
+    :path: ".symlinks/plugins/descope/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  descope: 1813a9de42554bd7c3243ef771d36fcc6420d9a6
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+
+PODFILE CHECKSUM: a57f30d18f102dd3ce366b1d62a55ecbef2158e5
+
+COCOAPODS: 1.11.3
