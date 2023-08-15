@@ -17,7 +17,6 @@ Future<bool> startFlow() async {
     Descope.sessionManager.manageSession(session);
     return true;
   } catch (e) {
-    print('ERROR: $e');
     return false;
   }
 }
