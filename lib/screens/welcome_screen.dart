@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_app_auth_func/screens/home_screen.dart';
-import 'package:flutter_sample_app_auth_func/services/util.dart';
+import 'package:flutter_sample_app_auth_func/services/auth/oauth.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -17,7 +17,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     setState(() {
       isLoading = true;
     });
-    final bool flowSucceeded = await startFlow();
+    // final bool flowSucceeded = await startFlow();
+    final bool flowSucceeded = await startOAuth();
 
     if (!mounted) return;
 

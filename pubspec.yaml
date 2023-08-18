@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   descope: ^0.6.0
   flutter_dotenv: ^5.1.0
-  
+  flutter_web_auth: ^0.5.0  
 
 dev_dependencies:
   flutter_test:
