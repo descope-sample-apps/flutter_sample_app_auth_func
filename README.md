@@ -7,7 +7,7 @@ Welcome to Descope's Flutter Sample App (Auth Func), a demonstration of how to i
 This sample app includes:
 
 - **App Client**: An example of how the client communicates with Descope.
-- **Auth Functions**: Demonstrations of various authentication functions supported by the Descope Flutter SDK.
+- **Auth Functions**: Demonstrations of various authentication functions supported by the Descope Flutter SDK. So far, we showcase: OAuth and OTP
 
 
 ## Getting Started
