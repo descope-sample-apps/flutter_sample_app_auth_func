@@ -13,11 +13,11 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   bool isLoading = false;
 
-  Future<void> _startFlow() async {
+  Future<void> _startOAtuh() async {
     setState(() {
       isLoading = true;
     });
-    // final bool flowSucceeded = await startFlow();
+
     final bool flowSucceeded = await startOAuth();
 
     if (!mounted) return;
@@ -50,10 +50,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             const SizedBox(height: 20),
             CupertinoButton(
               color: Theme.of(context).primaryColor,
-              onPressed: isLoading ? null : _startFlow,
+              onPressed: isLoading ? null : _startOAtuh,
               child: isLoading
                   ? const CircularProgressIndicator()
-                  : const Text('Get started'),
+                  : const Text('Login via Google'),
             )
           ],
         ),
