@@ -5,7 +5,7 @@ import 'package:flutter_sample_app_auth_func/services/auth/otp.dart';
 
 class CodeInputScreen extends StatefulWidget {
   final String loginId;
-  CodeInputScreen({required this.loginId, super.key});
+  const CodeInputScreen({required this.loginId, super.key});
 
   @override
   State<CodeInputScreen> createState() => _CodeInputScreenState();
@@ -31,7 +31,6 @@ class _CodeInputScreenState extends State<CodeInputScreen> {
     setState(() {
       isLoading = false;
     });
-    print(flowSucceeded);
 
     if (!flowSucceeded) return;
 

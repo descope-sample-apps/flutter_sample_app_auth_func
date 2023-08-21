@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sample_app_auth_func/screens/home_screen.dart';
 import 'package:flutter_sample_app_auth_func/screens/otp/login_id_input_screen.dart';
 import 'package:flutter_sample_app_auth_func/services/auth/oauth.dart';
-import 'package:flutter_sample_app_auth_func/services/auth/otp.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -60,7 +59,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => LoginIdInputScreen(),
+                    builder: (context) => const LoginIdInputScreen(),
                   ));
                 },
                 child: const Text("Login via OTP"))

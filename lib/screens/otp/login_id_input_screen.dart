@@ -4,7 +4,7 @@ import 'package:flutter_sample_app_auth_func/screens/otp/code_input_screen.dart'
 import 'package:flutter_sample_app_auth_func/services/auth/otp.dart';
 
 class LoginIdInputScreen extends StatefulWidget {
-  LoginIdInputScreen({super.key});
+  const LoginIdInputScreen({super.key});
 
   @override
   State<LoginIdInputScreen> createState() => _LoginIdInputScreenState();
