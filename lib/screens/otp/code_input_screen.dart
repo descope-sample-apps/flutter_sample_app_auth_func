@@ -17,6 +17,9 @@ class _CodeInputScreenState extends State<CodeInputScreen> {
   bool isLoading = false;
 
   Future<void> _verifyCode() async {
+    if (_controller.text.isEmpty || _controller.text.length != 6) {
+      return;
+    }
     setState(() {
       isLoading = true;
     });
@@ -50,9 +53,9 @@ class _CodeInputScreenState extends State<CodeInputScreen> {
               children: [
                 const Text("Enter verification code"),
                 TextField(
-                  controller: _controller,
-                  autofocus: true,
-                ),
+                    controller: _controller,
+                    autofocus: true,
+                    keyboardType: TextInputType.number),
                 const SizedBox(height: 20),
                 CupertinoButton(
                   color: Theme.of(context).primaryColor,
