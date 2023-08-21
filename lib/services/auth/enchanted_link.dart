@@ -6,17 +6,15 @@ Future startEnchantedLink(String loginId) async {
   final enchantedLinkResponse = await Descope.enchantedLink.signUp(
       loginId: loginId, uri: 'https://your-redirect-address.com/verify');
 
-  Descope.enchantedLink.signUp(
-      loginId: loginId, uri: 'https://your-redirect-address.com/verify');
-  Descope.enchantedLink.signIn(
-      loginId: loginId, uri: 'https://your-redirect-address.com/verify');
-  Descope.enchantedLink.signUpOrIn(
-      loginId: loginId, uri: 'https://your-redirect-address.com/verify');
-  Descope.enchantedLink.updateEmail(
-      email: "email",
-      refreshJwt: Descope.sessionManager.session!.refreshJwt,
-      loginId: loginId,
-      uri: 'https://your-redirect-address.com/verify');
+  // Descope.enchantedLink.signIn(
+  //     loginId: loginId, uri: 'https://your-redirect-address.com/verify');
+  // Descope.enchantedLink.signUpOrIn(
+  //     loginId: loginId, uri: 'https://your-redirect-address.com/verify');
+  // Descope.enchantedLink.updateEmail(
+  //     email: "email",
+  //     refreshJwt: Descope.sessionManager.session!.refreshJwt,
+  //     loginId: loginId,
+  //     uri: 'https://your-redirect-address.com/verify');
 
   return enchantedLinkResponse;
 }
