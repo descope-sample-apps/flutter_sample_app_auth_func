@@ -1,16 +1,32 @@
 import 'package:descope/descope.dart';
 
-Future startMagicLInk() async {
-  // If configured globally, the redirect URI is optional. If provided however, it will be used
-// instead of any global configuration
-  await Descope.magicLink.signUp(
-      method: DeliveryMethod.email,
-      loginId: 'desmond_c@mail.com',
-      uri: 'https://your-redirect-address.com/verify');
+Future startMagicLink() async {
+  
+  print('start auth');
+  SignInOptions options = SignInOptions(customClaims: Map<String, dynamic>.from({'name': 'allen'}));
+  
+  String phone = '+18173740750';
+  final link = await Descope.magicLink.signUpOrIn(method: DeliveryMethod.sms, loginId: phone,
+   redirectUrl: 'https://thewatercooler.app/magiclink', 
+   options: options);
+  print(link);
+  
+  print('got auth response');
+  
+  return true;
+
 }
 
-Future verifyMagicLink() async {
-  // To verify a magic link, your redirect page must call the validation function on the token (t) parameter (https://your-redirect-address.com/verify?t=<token>):
-  final authResponse = await Descope.magicLink.verify(token: '<token>');
+Future verifyMagicLink(String token) async {
+
+  final authResponse = await Descope.magicLink.verify(token: token);
+  final session = DescopeSession.fromAuthenticationResponse(authResponse);
+  Descope.sessionManager.manageSession(session);
+
+  print(session.sessionJwt);
+  print(session.refreshJwt);
+  
+  Descope.sessionManager.refreshSessionIfNeeded();
+  
   return authResponse;
 }

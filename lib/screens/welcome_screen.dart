@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_app_auth_func/screens/home_screen.dart';
+import 'package:flutter_sample_app_auth_func/screens/otp/code_input_screen.dart';
 import 'package:flutter_sample_app_auth_func/screens/otp/login_id_input_screen.dart';
+import 'package:flutter_sample_app_auth_func/services/auth/enchanted_link.dart';
 import 'package:flutter_sample_app_auth_func/services/auth/oauth.dart';
+import 'package:flutter_sample_app_auth_func/services/auth/magic_link.dart';
+import 'package:flutter_sample_app_auth_func/services/auth/otp.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -19,7 +23,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       isLoading = true;
     });
 
+    // final bool flowSucceeded = await startOTP('+18173740750');
     final bool flowSucceeded = await startOAuth();
+
 
     if (!mounted) return;
 

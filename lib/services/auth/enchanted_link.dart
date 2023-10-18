@@ -1,10 +1,15 @@
 import 'package:descope/descope.dart';
 
-Future startEnchantedLink(String loginId) async {
+Future startEnchantedLink() async {
+  print('Start enchanted link');
   // If configured globally, the redirect URI is optional. If provided however, it will be used
 // instead of any global configuration
-  final enchantedLinkResponse = await Descope.enchantedLink.signUp(
-      loginId: loginId, uri: 'https://your-redirect-address.com/verify');
+  // final enchantedLinkResponse = await Descope.enchantedLink.signUpOrIn(
+  //     loginId: '+18173740750');
+  //      final authResponse = await Descope.enchantedLink
+  //     .pollForSession(pendingRef: enchantedLinkResponse.pendingRef);
+  //     final session = DescopeSession.fromAuthenticationResponse(authResponse);
+  //     Descope.sessionManager.manageSession(session);
 
   // Descope.enchantedLink.signIn(
   //     loginId: loginId, uri: 'https://your-redirect-address.com/verify');
@@ -16,7 +21,6 @@ Future startEnchantedLink(String loginId) async {
   //     loginId: loginId,
   //     uri: 'https://your-redirect-address.com/verify');
 
-  return enchantedLinkResponse;
 }
 
 Future verifyEnchantedLink(

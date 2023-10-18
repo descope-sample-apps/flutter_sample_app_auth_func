@@ -15,9 +15,9 @@ class _LoginIdInputScreenState extends State<LoginIdInputScreen> {
   bool isLoading = false;
 
   Future<void> _startAuth() async {
-    if (!isEmailValid(_controller.text)) {
-      return;
-    }
+    // if (!isEmailValid(_controller.text)) {
+    //   return;
+    // }
     setState(() {
       isLoading = true;
     });

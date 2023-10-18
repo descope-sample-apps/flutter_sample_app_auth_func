@@ -16,7 +16,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   DescopeUser? user = Descope.sessionManager.session?.user;
 
-  Future<void> _logout() async {
+   Future<void> _logout() async {
+      // print('Update email');
+
     setState(() {
       isLoading = true;
     });
@@ -33,6 +35,24 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context) => const WelcomeScreen(),
     ));
   }
+  Future<void> _updateEmail() async {
+     try {
+      String email = 'allen@descope.com';
+      String refreshJwt = Descope.sessionManager.session!.refreshJwt;
+      String sessionJwt = Descope.sessionManager.session!.sessionJwt;
+
+      await Descope.magicLink.updateEmail(
+        email: email,
+        loginId: Descope.sessionManager.session!.user.phone!,
+        refreshJwt: Descope.sessionManager.session!.refreshJwt,
+        options: const UpdateOptions(addToLoginIds: true, onMergeUseExisting: true),
+        redirectUrl: 'https://thewatercooler.app/magiclink', 
+      );
+     } catch (e) {
+        print(e);
+     }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +82,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: isLoading
                   ? const CircularProgressIndicator()
                   : const Text('Log out'),
+            ),
+             CupertinoButton(
+              color: Theme.of(context).primaryColorDark,
+              onPressed:  _updateEmail,
+              child: const Text('Update Email'),
             )
           ],
         ),
