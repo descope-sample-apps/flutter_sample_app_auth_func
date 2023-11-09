@@ -38,16 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _updateEmail() async {
      try {
       String email = 'allen@descope.com';
+      String loginId = Descope.sessionManager.session!.user.phone!;
       String refreshJwt = Descope.sessionManager.session!.refreshJwt;
-      String sessionJwt = Descope.sessionManager.session!.sessionJwt;
-
+      UpdateOptions options = const UpdateOptions(addToLoginIds: true, onMergeUseExisting: true);
       await Descope.magicLink.updateEmail(
         email: email,
-        loginId: Descope.sessionManager.session!.user.phone!,
-        refreshJwt: Descope.sessionManager.session!.refreshJwt,
-        options: const UpdateOptions(addToLoginIds: true, onMergeUseExisting: true),
+        loginId: loginId,
+        refreshJwt: refreshJwt,
+        options: options,
         redirectUrl: 'https://thewatercooler.app/magiclink', 
       );
+      // await Descope.magicLink.updatePhone(phone: "+17374437068", method: DeliveryMethod.sms, loginId: loginId, refreshJwt: refreshJwt);
      } catch (e) {
         print(e);
      }

@@ -68,7 +68,7 @@ class _LoginIdInputScreenState extends State<LoginIdInputScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Input your email"),
+            const Text("Input your phone number"),
             Form(
               autovalidateMode: AutovalidateMode.always,
               child: TextFormField(
