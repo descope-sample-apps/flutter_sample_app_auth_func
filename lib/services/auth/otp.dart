@@ -23,6 +23,9 @@ Future<bool> verifyOTP(String loginId, String code) async {
     final session = DescopeSession.fromAuthenticationResponse(authResponse);
     // the session manager automatically takes care of persisting the session
     // and refreshing it as needed
+    print(session.sessionJwt);
+    print('Refresh token');
+    print(session.refreshJwt);
     Descope.sessionManager.manageSession(session);
     return true;
   } catch (e) {
