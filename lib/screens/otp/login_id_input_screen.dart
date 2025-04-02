@@ -81,7 +81,12 @@ class _LoginIdInputScreenState extends State<LoginIdInputScreen> {
             CupertinoButton(
               color: Theme.of(context).primaryColor,
               onPressed: _startAuth,
-              child: const Text("Next"),
+              child: const Text.rich(
+                    TextSpan(
+                      text: 'Next',
+                      style: TextStyle(color: Colors.white),
+                    ),
+              ),
             )
           ],
         ),

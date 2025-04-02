@@ -54,8 +54,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onPressed: isLoading ? null : _startAuth,
               child: isLoading
                   ? const CircularProgressIndicator()
-                  : const Text('Login via Google'),
+                  : const Text.rich(
+                      TextSpan(
+                        text: 'Login via Google',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
             ),
+            const SizedBox(height: 16),
             TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
