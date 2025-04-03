@@ -59,7 +59,12 @@ class _CodeInputScreenState extends State<CodeInputScreen> {
                 CupertinoButton(
                   color: Theme.of(context).primaryColor,
                   onPressed: _verifyCode,
-                  child: const Text("Next"),
+                  child: const Text.rich(
+                    TextSpan(
+                      text: 'Next',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 )
               ]),
         )));

@@ -61,7 +61,12 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: isLoading ? null : _logout,
               child: isLoading
                   ? const CircularProgressIndicator()
-                  : const Text('Log out'),
+                  : const Text.rich(
+                      TextSpan(
+                        text: 'Log out',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
             )
           ],
         ),
